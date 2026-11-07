@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart | Aurelia</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container flex items-center justify-between">
+    <a href="index.html" class="logo">Aurelia <span>Tech</span></a>
+    <nav class="nav flex items-center gap-4">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="container" style="padding-top:100px; padding-bottom:60px;">
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);letter-spacing:-0.04em;">Your Cart</h1>
+</section>
+
+<section class="container" style="padding-bottom:100px;">
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start;">
+    <table class="cart-table" id="cart-table" aria-label="Cart items">
+      <thead><tr><th>Item</th><th>Product</th><th>Qty</th><th>Price</th><th></th></tr></thead>
+      <tbody id="cart-table-body"></tbody>
+    </table>
+    <aside class="checkout-box" id="cart-summary"></aside>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><p>© 2026 Aurelia Tech.</p></div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

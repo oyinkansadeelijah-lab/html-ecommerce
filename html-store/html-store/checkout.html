@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Aurelia</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container flex items-center justify-between">
+    <a href="index.html" class="logo">Aurelia <span>Tech</span></a>
+    <nav class="nav flex items-center gap-4">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:100px; padding-bottom:100px; text-align:center;">
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);margin-bottom:1rem;">Checkout</h1>
+  <p style="color:var(--muted);max-width:500px;margin:0 auto 3rem;">This is a pure HTML/CSS/JS demo site. No real payment is processed.</p>
+
+  <div class="checkout-box" style="max-width:480px;margin:0 auto;text-align:left;">
+    <h2>Order Summary</h2>
+    <div id="checkout-items"></div>
+    <div style="border-top:1px solid var(--border);margin:1rem 0;padding-top:1rem;font-family:'Playfair Display',serif;font-size:1.4rem;"><span>Total</span> <span id="checkout-total" style="color:var(--gold)"></span></div>
+    <button onclick="finishCheckout()" class="btn-primary" style="width:100%;">Confirm Order (Demo)</button>
+  </div>
+
+  <div id="checkout-confirm" style="display:none;margin-top:4rem;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:3rem;">Confirmed.</h2>
+    <p style="color:var(--muted);">Your demo order has been received. No real payment was made.</p>
+    <a href="index.html" onclick="clearCart()" class="btn-secondary" style="margin-top:1rem;">Back Home</a>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container"><p>© 2026 Aurelia Tech.</p></div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  function renderCheckout() {
+    const c = getCart();
+    document.getElementById('checkout-items').innerHTML = c.map(i => `
+      <div style="display:flex;gap:1rem;align-items:center;padding:0.75rem 0;border-bottom:1px solid var(--border);">
+        <img src="${i.image}" alt="${i.name}" style="width:50px;height:50px;object-fit:cover;border-radius:8px;">
+        <div style="flex-grow:1;"><div style="font-weight:600;">${i.name}</div><div style="font-size:0.8rem;color:var(--muted);">Qty: ${i.qty}</div></div>
+        <div style="font-family:'Playfair Display',serif;">$${(i.price*i.qty).toLocaleString()}</div>
+      </div>
+    `).join('');
+    document.getElementById('checkout-total').textContent = '$' + cartTotal().toLocaleString();
+  }
+  function finishCheckout() { clearCart(); document.querySelector('.checkout-box').style.display='none'; document.getElementById('checkout-confirm').style.display='block'; }
+  document.addEventListener('DOMContentLoaded', renderCheckout);
+</script>
+</body>
+</html>

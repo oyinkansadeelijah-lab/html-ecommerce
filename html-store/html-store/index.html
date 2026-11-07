@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia | Luxury Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container flex items-center justify-between">
+    <a href="index.html" class="logo">Aurelia <span>Tech</span></a>
+    <nav class="nav flex items-center gap-4" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="small">Curated Technology — Est. 2026</p>
+    <h1>Precision without compromise.</h1>
+    <p>A carefully edited selection of devices engineered for those who demand both beauty and function.</p>
+    <div class="flex gap-4" style="margin-top:0.5rem;">
+      <a href="shop.html" class="btn-primary">Explore Shop</a>
+      <a href="product.html?id=p3" class="btn-secondary">View Feature</a>
+    </div>
+  </div>
+</section>
+
+<section class="container" aria-label="Featured products">
+  <div class="section-header flex items-center justify-between">
+    <h2>Featured</h2>
+    <a href="shop.html" class="small">View All &rarr;</a>
+  </div>
+  <div class="grid-3">
+    <a href="product.html?id=p1" class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop" alt="Aurelia X1 Watch" loading="lazy"></div>
+      <div class="card-body">
+        <p class="small">Wearables</p>
+        <h3>Aurelia X1 Watch</h3>
+        <p class="price">$2,890</p>
+        <p style="font-size:0.9rem;color:var(--muted);">Titanium case with sapphire crystal.</p>
+      </div>
+    </a>
+    <a href="product.html?id=p2" class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop" alt="Sona Headphones" loading="lazy"></div>
+      <div class="card-body">
+        <p class="small">Audio</p>
+        <h3>Sona Headphones</h3>
+        <p class="price">$1,250</p>
+        <p style="font-size:0.9rem;color:var(--muted);">Planar magnetic drivers in aluminum.</p>
+      </div>
+    </a>
+    <a href="product.html?id=p3" class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop" alt="Meridian Monitor" loading="lazy"></div>
+      <div class="card-body">
+        <p class="small">Displays</p>
+        <h3>Meridian 4K Monitor</h3>
+        <p class="price">$4,200</p>
+        <p style="font-size:0.9rem;color:var(--muted);">Mini-LED with 1400 nits peak.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="container" style="padding-top:60px;" aria-label="About">
+  <div class="grid-3" style="gap:3rem;">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.5rem;">Hand-Selected</h3>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;">Every item passes a rigorous design, performance, and durability review.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.5rem;">White-Glove</h3>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;">Complimentary setup and concierge support for all premium orders.</p>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.5rem;">Lifetime Care</h3>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;">Extended warranties and direct access to our engineering team.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;color:#fff;">Aurelia Tech</p>
+    <p>© 2026 Aurelia Tech. Built with pure HTML, CSS & JavaScript.</p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

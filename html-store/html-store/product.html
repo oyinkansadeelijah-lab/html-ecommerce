@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product | Aurelia</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container flex items-center justify-between">
+    <a href="index.html" class="logo">Aurelia <span>Tech</span></a>
+    <nav class="nav flex items-center gap-4">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top:100px; padding-bottom:100px;" id="product-main"></main>
+
+<footer class="site-footer"><div class="container"><p>© 2026 Aurelia Tech.</p></div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const p = products.find(x => x.id === id) || products[0];
+  document.getElementById('product-main').innerHTML = `
+    <a href="shop.html" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">← Back to Shop</a>
+    <div class="product-grid" style="margin-top:2rem;">
+      <div>
+        <img src="${p.image}" alt="${p.name}" style="border-radius:24px;box-shadow:0 25px 60px rgba(0,0,0,0.1);">
+      </div>
+      <div>
+        <p class="small">${p.category}</p>
+        <h1>${p.name}</h1>
+        <p>${p.desc}</p>
+        <ul class="feature-list">
+          <li>Hand-finished materials</li>
+          <li>Precision engineering</li>
+          <li>White-glove delivery</li>
+        </ul>
+        <div style="font-family:'Playfair Display',serif;font-size:3rem;color:var(--gold);margin-bottom:1rem;">$${p.price.toLocaleString()}</div>
+        <button onclick="addToCart(products.find(x=>x.id==='${p.id}'))" class="btn-primary" style="font-size:1rem;padding:1.1rem 3rem;">Add to Cart</button>
+      </div>
+    </div>
+  `;
+</script>
+</body>
+</html>
